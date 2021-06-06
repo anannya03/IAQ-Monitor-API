@@ -72,7 +72,8 @@ def get_all_sensor_values(db: Session):
     return db.query(SensorValueDB).all()
 
 def get_last_sensor_values(db: Session):
-    return db.query(SensorValueDB).limit(15).all()
+    query = db.query(SensorValueDB).order_by(SensorValueDB.Date_Time.desc()).limit(15).all()
+    return query[::-1]
 
 def create_sensor_value(db: Session, sensorValue: SensorValue):
     db_value = SensorValueDB(**sensorValue.dict())

@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "==7.1.2"
+fastapi = "==0.65.1"
+greenlet = "==1.1.0"
+gunicorn = "==20.1.0"
+h11 = "==0.12.0"
+pydantic = "==1.8.2"
+starlette = "==0.14.2"
+typing = "==3.7.4.3"
+typing-extensions = "==3.10.0.0"
+uvicorn = "==0.13.4"
+astroid = "==2.3.3"
+colorama = "==0.4.3"
+isort = "==4.3.21"
+lazy-object-proxy = "==1.4.3"
+pylint = "==2.4.4"
+six = "==1.14.0"
+websockets = "==8.1"
+wrapt = "==1.11.2"
+SQLAlchemy = "==1.4.15"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

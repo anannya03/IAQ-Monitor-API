@@ -6,6 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
 from sqlalchemy import Column, Float, String, Integer
 import smtplib
+import os
 
 
 # function to send email from a Gmail account
@@ -140,7 +141,9 @@ def create_values_endpoint(sensorValue: SensorValue, db: Session = Depends(get_d
     # send mail in case gases have breached thresholds
     if len(breachedGasValues) > 0:
         emailUser = 'arduinoiaqmonitor@gmail.com'
-        emailPassword = open('password-for-email', 'r').readline()
+
+        # get password from environment variable
+        emailPassword = os.environ['IAQ_Monitor_Email_Password']
         emailRecipients = ['gautham.is17@bmsce.ac.in',
                            'anannya.is17@bmsce.ac.in', 'arvindhs.is17@bmsce.ac.in']
         emailSubject = 'IAQ Monitor Alert'

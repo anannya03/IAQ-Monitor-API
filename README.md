@@ -12,3 +12,7 @@
 
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - [FastAPI](https://fastapi.tiangolo.com/)
+
+# Live Demo
+
+The deployed API is available [here](https://iaq-monitor-api.herokuapp.com/).
